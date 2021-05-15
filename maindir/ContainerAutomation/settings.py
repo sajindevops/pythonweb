@@ -25,7 +25,7 @@ SECRET_KEY = 'yp8=h4&vsbv6ks!w*v+uu^(n01(l8j^r7q+)hi&ujenrzeffkt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'ContainerAutomation.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'pydb',
-        'USER': '$DBUSER',
-        'PASSWORD': '$DBPASSWORD',
-        'HOST': '$DBSERVER',   # Or an IP Address that your DB is hosted on
+        'USER': os.getenv('DBUSER'),
+        'PASSWORD': os.getenv('DBPASSWORD'),
+        'HOST': os.getenv('DBSERVER'),   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }

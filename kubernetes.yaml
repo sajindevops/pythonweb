@@ -1,0 +1,14 @@
+apiversion
+kind: pod
+metadata
+spec
+  container
+     image: sajinibm/kubeclass:web01
+     port
+     command
+
+----
+
+apiverision
+kind: service
+metadata
